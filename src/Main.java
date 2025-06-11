@@ -10,18 +10,28 @@ public class Main {
 
         Temperatura validarTemp = new Temperatura();
 
+        SumaDigitos digitos = new SumaDigitos();
+
         int opcion;
         try{
             System.out.println("-------ELIJE UN PROBLEMA-------");
             System.out.println("1. Contraseña");
             System.out.println("2. Temperatura");
+            System.out.println("3. Contar Digitos");
+
             opcion = Integer.parseInt(br.readLine());
 
             switch(opcion){
                 case 1:
                     contraseña.validarContraseña();
                     break;
-                case 2: validarTemp.ejecutar();
+                case 2:
+                    validarTemp.ejecutar();
+                    break;
+                case 3:
+                    digitos.ejecutar();
+                    break;
+
 
             }
         } catch (Exception e) {
