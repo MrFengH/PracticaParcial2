@@ -41,11 +41,8 @@ public class ValidarFecha {
                 limiteDeDias = 31;
             }
         }
-        if(mes == 2){
-            limiteDeDias = 28;
-        }
-        if(bisiesto == true && mes == 2){
-            limiteDeDias = 29;
+        if (mes == 2) {
+            limiteDeDias = bisiesto ? 29 : 28;
         }
         if(dia > limiteDeDias || dia < 1){
             throw new IllegalArgumentException("Día Inválido.");
