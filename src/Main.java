@@ -12,12 +12,14 @@ public class Main {
 
         SumaDigitos digitos = new SumaDigitos();
 
+        Fecha validarFecha = new Fecha();
         int opcion;
         try{
             System.out.println("-------ELIJE UN PROBLEMA-------");
             System.out.println("1. Contraseña");
             System.out.println("2. Temperatura");
             System.out.println("3. Contar Digitos");
+            System.out.println("4. Validar Fecha");
 
             opcion = Integer.parseInt(br.readLine());
 
@@ -31,8 +33,9 @@ public class Main {
                 case 3:
                     digitos.ejecutar();
                     break;
-
-
+                case 4:
+                    validarFecha.ejecutar();
+                    break;
             }
         } catch (Exception e) {
             e.printStackTrace();

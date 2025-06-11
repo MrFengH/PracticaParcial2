@@ -3,11 +3,11 @@ public class ValidarFecha {
     String fecha;
     boolean bisiesto = false;
     int año;
-    String dia;
-    String mes;
+    int dia;
+    int mes;
     boolean diaValido = false;
     boolean mesValido = false;
-
+    int limiteDeDias;
 
     public ValidarFecha(String fecha){
         this.fecha = fecha;
@@ -17,19 +17,41 @@ public class ValidarFecha {
 
         String token[] = fecha.split("/");
 
-        dia = token[0];
-        mes = token[1];
+        dia = Integer.parseInt(token[0]);
+        mes = Integer.parseInt(token[1]);
         año = Integer.parseInt(token[2]);
 
         if((año % 4 == 0 && año % 100 != 0) || (año % 400 == 0)){
             bisiesto = true;
         }
-        if(Integer.parseInt(String.valueOf(mes.charAt(0))) == 0){
-            if(Integer.parseInt(String.valueOf(mes.charAt(1))) )
-
+        if(mes > 12 || mes < 1){
+            throw new IllegalArgumentException("Mes Inválido.");
+        }
+        if(mes <= 7){
+            if(mes % 2 != 0){
+                limiteDeDias = 31;
+            }else{
+                limiteDeDias = 30;
+            }
+        }
+        if(mes >= 8){
+            if(mes % 2 != 0){
+                limiteDeDias = 30;
+            }else{
+                limiteDeDias = 31;
+            }
+        }
+        if(mes == 2){
+            limiteDeDias = 28;
+        }
+        if(bisiesto == true && mes == 2){
+            limiteDeDias = 29;
+        }
+        if(dia > limiteDeDias || dia < 1){
+            throw new IllegalArgumentException("Día Inválido.");
         }
 
-
+        System.out.println("Fecha Válida.");
     }
 
 }
