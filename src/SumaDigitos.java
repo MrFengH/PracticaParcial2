@@ -23,6 +23,8 @@ public class SumaDigitos {
                 valido = true;
                 ContarDigitos contarDigitos = new ContarDigitos(numero);
                 contarDigitos.contarDigitos();
+                System.out.println("Cantidad de pares: "+contarDigitos.getPares());
+                System.out.println("Cantidad de impares: "+contarDigitos.getImpares());
 
             } catch (NumberFormatException e) {
                 System.err.println("Introduzca un número entero positivo.");

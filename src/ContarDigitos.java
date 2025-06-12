@@ -12,6 +12,13 @@ public class ContarDigitos {
         this.impares = 0;
     }
 
+    public int getImpares() {
+        return impares;
+    }
+    public int getPares() {
+        return pares;
+    }
+
     public void contarDigitos(){
         String numeros = numero.toString();
 
@@ -22,9 +29,6 @@ public class ContarDigitos {
                 impares++;
             }
         }
-
-        System.out.println("Cantidad de pares: "+pares);
-        System.out.println("Cantidad de impares: "+impares);
 
     }
 
